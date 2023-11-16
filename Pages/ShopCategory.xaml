@@ -1,0 +1,52 @@
+﻿<Page x:Class="TeamProject_Beta.Pages.ShopCategory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TeamProject_Beta.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShopCategory">
+
+    <Grid>
+        <Rectangle>
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#2b4b6e" Offset="0.0"></GradientStop>
+                    <GradientStop Color="#032952" Offset="0.90"></GradientStop>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        
+        
+        <ScrollViewer Grid.Column="0" VerticalScrollBarVisibility="Hidden" Margin="10">
+            <StackPanel Margin="10">
+                <TextBlock Text="Больше игры жанра: КАТЕГОРИЯ" Margin="10" Foreground="White" FontSize="30"></TextBlock>
+                <Grid MinHeight="700" Margin="0,25,0,25">
+                    <ListView Name="ListViewProductOut" BorderBrush="Transparent" Background="Transparent" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{StaticResource ListViewAllProgramsShop}">
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel></WrapPanel>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Name="GridSingleProduct" Background="#3b6d8c" MouseDown="GridSingleProduct_MouseDown">
+                                    <StackPanel Margin="10">
+                                        <Image Width="100" Source="C:\Users\VerlWent\source\repos\TeamProject_Beta\Resources\Images\Cube.png"></Image>
+                                        <TextBlock Name="ProductName" Text="Satisfactory" Foreground="White" Background="#2d5887" FontSize="20" TextAlignment="Center" Padding="3" Margin="5"></TextBlock>
+                                        <TextBlock Name="ProductPrice" Text="605 руб." Foreground="White" Background="#2d5887" HorizontalAlignment="Right" FontSize="15" Padding="3" Margin="5"></TextBlock>
+                                        <TextBlock Name="ProductCategory" Text="Экшен, Открытый мир, РПГ" Background="#2d5887" Foreground="White" Padding="3" Margin="5"></TextBlock>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
